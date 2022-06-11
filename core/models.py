@@ -13,3 +13,6 @@ class Evento(models.Model):
 	
 	def __str__(self):
 		return self.title
+
+	def get_event_data(self):
+		return self.event_data.strftime('%m/%d/%Y %H:%M')
