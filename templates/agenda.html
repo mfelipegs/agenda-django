@@ -8,9 +8,13 @@
 		<ul style="font-size:18px">
 			{% for evento in eventos %}
 				<li>
-					{{ evento.title }} - {{ evento.get_event_data }} 
-					( <a href="event/?id={{ evento.id }}">Update</a> / 
-					 <a href="event/delete/{{ evento.id }}/">Delete</a> )
+					<div style={% if evento.get_late_event %}
+								"color:red"
+								{% endif %}>
+						{{ evento.title }} - {{ evento.get_event_data }} 
+						( <a href="event/?id={{ evento.id }}">Update</a> / 
+						 <a href="event/delete/{{ evento.id }}/">Delete</a> )
+					</div>
 				</li>
 			{% endfor %}
 		</ul>
