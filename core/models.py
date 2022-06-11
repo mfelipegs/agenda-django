@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class Evento(models.Model):
 	title = models.CharField(max_length=100)
 	description = models.TextField(blank=True, null=True)
+	local = models.CharField(blank=True, null=True,max_length=150)
 	event_data = models.DateTimeField(verbose_name="Event data")
 	creation_data = models.DateTimeField(auto_now=True)
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -16,3 +17,6 @@ class Evento(models.Model):
 
 	def get_event_data(self):
 		return self.event_data.strftime('%m/%d/%Y %H:%M')
+
+	def __str__(self):
+		return self.local
