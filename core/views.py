@@ -34,3 +34,20 @@ def lista_eventos(request):
 	evento = Evento.objects.filter(user=user)
 	dados = {'eventos':evento}
 	return render(request, 'agenda.html', dados)
+
+@login_required(login_url='/login/')
+def event(request):
+	return render(request, 'event.html')
+
+@login_required(login_url='/login/')
+def submit_event(request):
+	if request.POST:
+		title = request.POST.get('title')
+		event_data = request.POST.get('event_data')
+		description = request.POST.get('description')
+		user = request.user
+		Evento.objects.create(title=title,
+							  event_data=event_data,
+							  description=description,
+							  user=user) 
+	return redirect('/')
