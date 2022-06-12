@@ -4,7 +4,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/mfelipegs/agenda-django)
 ![GitHub last commit](https://img.shields.io/github/last-commit/mfelipegs/agenda-django)
 # agenda-django
-A schedule created with Django and Python. The admin can create accounts through the Django admin site, so each user, after logging in, sees their own schedules with their events, which allows them to add new ones (inserting a title, event date/time, location and description), change existing ones and delete them. Events that have expired time/date are marked in red.
+A schedule created using Django framework, Python, HTML and CSS. The admin can create accounts through the Django admin site, so each user, after logging in, sees their own schedules with their events, which allows them to add new ones (inserting a title, event date/time, location and description), change existing ones and delete them. Events that have expired time/date are marked in red.
 - Multi-User
 - CRUD functional system
 - Login/Logout
