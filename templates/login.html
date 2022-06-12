@@ -1,27 +1,35 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Agenda</title>
+	<link rel="stylesheet" type="text/css" 
+	href="{% static 'css/style.css' %}">
 </head>
 <body>
-	<h1>Login</h1>
-	<form action="submit" method="POST">{% csrf_token %}
-		<div align="center">
-			<label for="username">User:<label>
-			<input type="text" name="username">
-			<label for="password">Password:<label>
-			<input type="password" name="password">
-			<button type="submit">Enter</button>
-		</div>
-	</form>
-	
-	{% for message in messages %}
-		<div align="center">
-			<br>
-			<strong>Error: </strong>{{ message }}
-		</div>
-	{% endfor %}
+	<div class="wrapper_login">
+			<div class="card_login">
+				<h1>Login</h1>
+				<form action="submit" method="POST">{% csrf_token %}
+					<div class="textfield">
+						<label for="username">User</label>
+						<input type="text" name="username" placeholder="User">
+					</div>
+					<div class="textfield">
+						<label for="password">Password</label>
+						<input type="password" name="password" placeholder="Password">
+					</div>
+					<button type="submit" class="btn_login">Enter</button>
+				</form>
+			</div>
+		{% for message in messages %}
+			<div class="message_error_login">
+				<br>
+				<strong>Error: </strong>{{ message }}
+			</div>
+		{% endfor %}
+	</div>
 </body>
 </html>
 
